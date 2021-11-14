@@ -1,0 +1,77 @@
+.container{
+    max-width:1200px;
+    margin: 5rem auto;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+   
+}
+.container h1{
+    text-align: center;
+    text-transform: lowercase;
+    color: #004b7e;
+    font-size: 36px;
+  
+     
+}
+
+.answers{
+    display: grid;
+    text-align: left;
+    grid-template-columns: repeat(2, 1fr);
+
+    &__list{
+        list-style: none;
+    }
+    &__item{
+        border: rgb(24, 11, 11) thin solid;
+        padding: 1rem;
+        margin: 2rem 1rem 0;
+        color: black;
+
+        &:hover{
+            cursor: pointer;
+            background-color: rgb(187, 230, 247);
+            border-style: hidden;
+        }
+    }
+}
+
+.btn{
+    font-size: 1.5rem;
+    width: 30rem;
+    padding: 0.1rem;
+    cursor: pointer;
+    background-color: #004b7e;
+}
+
+p{
+  
+   color: #004b7e;
+   border: 0.1rem   solid rebeccapurple;
+   border-radius: 0.6rem;
+   position: absolute;
+   
+   background-color: #dddddd;
+   margin-left: 838px;
+   padding-left: 5px;
+   padding-right: 11px;
+}
+.timer {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 1.4em;
+    letter-spacing: 1px;
+    text-decoration: none;
+   
+  }
+  .timer span {
+    font-size: 2em;
+    
+    text-decoration: none;
+  }
+  .timer span  h1{
+    font-size: 0.9em;
+    color: rgb(134, 130, 192);
+    text-decoration: none;
+  }

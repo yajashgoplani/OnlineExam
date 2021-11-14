@@ -1,0 +1,54 @@
+
+  <div class="row">
+    <div class="col s6 offset-s3">
+      <div class="card">
+        <div class="col s6">
+          <h1>Online Test Application</h1>
+        </div>
+        <div class="col s6">
+          <img src="assets\img\1.jpg" height="200px" />
+        </div>
+        <div class="card-content">
+          <form  [ngClass]="{'overlay': start}">
+            <h2 class="counter" *ngIf="start">{{ counter }}</h2>
+            <div class="row">
+              <div class="input-field col s12">
+                <i class="material-icons prefix">account_circle</i>
+                <input
+                  type="text"
+                  name="Name"
+                  placeholder="Name"
+                  #Name
+                  ngModel
+                  required
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <i class="material-icons prefix">mail_outline</i>
+                <input
+                  type="text"
+                  placeholder="Email"
+                  name="Email"
+                  #Email
+                  ngModel
+                  required
+                  
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <button   *ngIf="!start" (click)="startCounter();" class="btn-large btn-submit" type="submit">
+                  Start Test
+                </button>
+                
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

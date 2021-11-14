@@ -1,0 +1,44 @@
+
+<div class="container">
+    <div *ngIf="prevAnswered.length < 11">
+    <p class="text-center">{{ prevAnswered.length }} of {{ quizzes.length }}</p>
+    <div class="timer" *ngFor="let entry of entries">
+     <span *ngIf="getElaspsedTime(entry) as elaspsed">
+       <h1>{{elaspsed.minntes}} min : {{elaspsed.seconds}} sec</h1>
+     </span>
+  </div>
+    <h1  style="text-transform: uppercase;">{{ quizzes[currentQuiz].question }}</h1>
+    
+
+
+<div class="answers" >
+<ul class="answers__list" *ngFor="let quiz of quizzes[currentQuiz].answer" >
+    <label><li @answer class="answers__item" appBackground [correctAnswer]="quiz.correct">
+        <input  type="radio" name="options" (change)="onAnswer(quiz.correct)" [disabled]="answerSelected">
+        {{ quiz.option }}
+    </li></label>
+  </ul>
+</div>
+    
+    </div>
+
+
+    <div *ngIf="prevAnswered.length > 10">
+    <button class="btn" (click)="showResult()" *ngIf="resultStatus === 'Show Result'">{{ resultStatus }}</button>
+   
+    <div *ngIf="result">
+      <div align="center">
+      <img src="assets\img\612.jpg" height="200px" />
+    </div>
+    <h4 style="color: rgb(0, 102, 0);">  Correct Answers: {{ correctAnswers }}</h4>
+    
+    <h4 style="color: rgb(187, 11, 11);">Inocrrect Answers: {{ incorrectAnswers }}</h4>
+      
+    </div>
+    <br>
+    
+    <button style="border-radius:0.8em ; background-color: rgb(0, 106, 148);" class="btn btn--new" (click)="StartAgain()" *ngIf="resultStatus !== 'Show Result'">{{ resultStatus }}</button>
+  </div>
+
+
+</div>
